@@ -1,4 +1,57 @@
-node_modules/
+##############################
+# SISTEMA / EDITORES
+##############################
+# macOS / Windows
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# VS Code / JetBrains
+.vscode/*
+!.vscode/extensions.json   # <- deja recomendaciones de extensiones si quieres
+!.vscode/settings.json     # <- o tus settings del workspace
+.idea/
+*.code-workspace
+
+# Archivos temporales de editores
+*.swp
+*.swo
+*.swn
+*~
+*.tmp
+*.temp
+
+##############################
+# BUILD / CACHES / OUT
+##############################
 dist/
+build/
+out/
+tmp/
+temp/
+.cache/
+*.cache
+.sass-cache/
+
+##############################
+# NODE / GESTORES DE PAQUETES (por si luego agregas tooling)
+##############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+##############################
+# TESTS / REPORTES (futuro)
+##############################
+coverage/
+reports/
+.junit/
+
+##############################
+# ENTORNOS / SECRETOS
+##############################
+.env
+.env.*
+*.local
