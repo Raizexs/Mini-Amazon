@@ -1,0 +1,131 @@
+[
+  {
+    "id": "SKU-1001",
+    "titulo": "Sesshōmaru (Figura de colección 15 cm)",
+    "categoria": "Juguetes",
+    "marca": "Inuyasha",
+    "precio": 59990,
+    "rating": 4.3,
+    "stock": 0,
+    "descripcion": "Figura coleccionable de Sesshōmaru. Detalle premium, ideal para fans de la serie.",
+    "imagenes": ["img/prod1001-1.png", "img/prod1001-2.png"],
+    "vendidos": 120,
+    "destacado": true,
+    "specs": {
+      "Tipo": "Figura de colección",
+      "Altura": "15 cm",
+      "Material": "PVC / ABS",
+      "Incluye base": "Sí",
+      "Articulaciones": "No (estática)",
+      "Licencia": "Oficial"
+    }
+  },
+  {
+    "id": "SKU-1002",
+    "titulo": "Libro: Introducción a la IA",
+    "categoria": "Libros",
+    "marca": "Editorial Campus",
+    "precio": 15990,
+    "rating": 4.8,
+    "stock": 18,
+    "descripcion": "Fundamentos y aplicaciones prácticas de la inteligencia artificial.",
+    "imagenes": ["img/prod1002-1.png"],
+    "vendidos": 75,
+    "destacado": true,
+    "specs": {
+      "Autor": "A. Pérez (ed.)",
+      "Formato": "Tapa blanda, 16 × 23 cm",
+      "Páginas": "320",
+      "Año": "2023",
+      "ISBN": "978-956-000000-1",
+      "Idioma": "Español"
+    }
+  },
+  {
+    "id": "SKU-1003",
+    "titulo": "Polera Unisex Logo Feria",
+    "categoria": "Moda",
+    "marca": "Feria U",
+    "precio": 12990,
+    "rating": 4.1,
+    "stock": 42,
+    "descripcion": "Algodón orgánico, varias tallas. Suave y respirable para uso diario.",
+    "imagenes": ["img/prod1003-1.png"],
+    "vendidos": 210,
+    "destacado": true,
+    "specs": {
+      "Material": "100% algodón orgánico (180 g/m²)",
+      "Corte": "Unisex clásico",
+      "Tallas": "S–M–L–XL",
+      "Color": "Negro con logo blanco",
+      "Impresión": "Serigrafía",
+      "Cuidado": "Lavar a 30°C, no clorar"
+    }
+  },
+  {
+    "id": "SKU-1004",
+    "titulo": "Set de Juguetes STEAM",
+    "categoria": "Juguetes",
+    "marca": "EduPlay",
+    "precio": 21990,
+    "rating": 4.6,
+    "stock": 33,
+    "descripcion": "Robótica básica y experimentos para desarrollar pensamiento científico.",
+    "imagenes": ["img/prod1004-1.png"],
+    "vendidos": 90,
+    "destacado": false,
+    "specs": {
+      "Contenido": "Robot didáctico + manual + 20 experimentos",
+      "Edad recomendada": "8+ años",
+      "Materiales": "Plástico, metal y papel",
+      "Pilas": "2×AA (no incluidas)",
+      "Seguridad": "Libre de BPA, certificación CE",
+      "Manual": "Español"
+    }
+  },
+  {
+    "id": "SKU-1005",
+    "titulo": "Lámpara de Escritorio LED",
+    "categoria": "Hogar",
+    "marca": "Lumina",
+    "precio": 17990,
+    "rating": 4.4,
+    "stock": 15,
+    "descripcion": "Luz regulable con puerto USB para cargar dispositivos.",
+    "imagenes": ["img/prod1005-1.png"],
+    "vendidos": 60,
+    "destacado": false,
+    "specs": {
+      "Potencia": "8 W",
+      "Temperatura de color": "3000–6500 K",
+      "Niveles de brillo": "5",
+      "Puerto USB": "5 V / 1 A",
+      "Brazo": "Articulado 180°",
+      "Altura": "40 cm",
+      "Garantía": "6 meses"
+    }
+  },
+  {
+    "id": "SKU-1006",
+    "titulo": "Pelota de Fútbol Pro",
+    "categoria": "Deportes",
+    "marca": "Arena",
+    "precio": 19990,
+    "rating": 4.2,
+    "stock": 27,
+    "descripcion": "Tamaño 5, cosida a máquina. Resistente y con gran respuesta en el toque.",
+    "imagenes": ["img/prod1006-1.png", "img/prod1006-2.png"],
+    "vendidos": 140,
+    "destacado": false,
+    "specs": {
+      "Tamaño": "N°5",
+      "Circunferencia": "68–70 cm",
+      "Cosido": "A máquina",
+      "Material": "PU",
+      "Cámara": "Butyl",
+      "Peso": "410–450 g",
+      "Presión recomendada": "0,8 bar",
+      "Superficie": "Césped natural y artificial"
+    }
+  }
+]

@@ -1,0 +1,37 @@
+[
+  { "product_id": "SKU-1001", "productId": "SKU-1001", "user": "María",   "rating": 5, "comment": "La figura tiene muy buen acabado y colores fieles al personaje. Llegó impecable.", "date": "2025-08-15" },
+  { "product_id": "SKU-1001", "productId": "SKU-1001", "user": "Luis",    "rating": 4, "comment": "Me encanta Sesshōmaru. La base es estable, aunque me habría gustado que fuera articulada.", "date": "2025-08-20" },
+  { "product_id": "SKU-1001", "productId": "SKU-1001", "user": "Constanza","rating": 5, "comment": "Excelente detalle en el rostro y el pelo. Ideal para vitrina.", "date": "2025-08-28" },
+  { "product_id": "SKU-1001", "productId": "SKU-1001", "user": "Diego",   "rating": 4, "comment": "Buena calidad por el precio. El empaque protegía muy bien.", "date": "2025-09-01" },
+  { "product_id": "SKU-1001", "productId": "SKU-1001", "user": "Camila",  "rating": 5, "comment": "Coleccionable precioso. Compraría otra de la misma línea.", "date": "2025-09-03" },
+
+  { "product_id": "SKU-1002", "productId": "SKU-1002", "user": "Javier",  "rating": 5, "comment": "Excelente introducción a la IA: claro, con ejemplos y ejercicios al final de cada capítulo.", "date": "2025-07-22" },
+  { "product_id": "SKU-1002", "productId": "SKU-1002", "user": "Valentina","rating": 4, "comment": "Muy completo para principiantes. Eché de menos más casos en español.", "date": "2025-08-02" },
+  { "product_id": "SKU-1002", "productId": "SKU-1002", "user": "Nicolás", "rating": 5, "comment": "Me sirvió para un ramo de la U. Buen equilibrio teoría/práctica.", "date": "2025-08-11" },
+  { "product_id": "SKU-1002", "productId": "SKU-1002", "user": "Rocío",   "rating": 4, "comment": "Es ameno y no exige saber matemáticas avanzadas. Recomendado.", "date": "2025-08-29" },
+  { "product_id": "SKU-1002", "productId": "SKU-1002", "user": "Tomás",   "rating": 5, "comment": "Trae glosario y recursos online. Muy buena edición.", "date": "2025-09-04" },
+
+  { "product_id": "SKU-1003", "productId": "SKU-1003", "user": "Paula",   "rating": 5, "comment": "Tela suave y no se encoge. El logo se ve firme después de varios lavados.", "date": "2025-07-30" },
+  { "product_id": "SKU-1003", "productId": "SKU-1003", "user": "Andrés",  "rating": 4, "comment": "Corte unisex real, pedí mi talla y calzó bien. Color fiel a la foto.", "date": "2025-08-05" },
+  { "product_id": "SKU-1003", "productId": "SKU-1003", "user": "Carolina","rating": 4, "comment": "La costura está prolija. La tela es algo gruesa, ideal para otoño.", "date": "2025-08-18" },
+  { "product_id": "SKU-1003", "productId": "SKU-1003", "user": "Felipe",  "rating": 5, "comment": "Muy cómoda para el día a día. Buen algodón orgánico.", "date": "2025-08-26" },
+  { "product_id": "SKU-1003", "productId": "SKU-1003", "user": "Sofía",   "rating": 5, "comment": "Relación precio/calidad excelente. Volvería a comprar.", "date": "2025-09-02" },
+
+  { "product_id": "SKU-1004", "productId": "SKU-1004", "user": "Marcela", "rating": 5, "comment": "A mis hijos les encantó. Actividades claras y seguras para hacer en casa.", "date": "2025-07-18" },
+  { "product_id": "SKU-1004", "productId": "SKU-1004", "user": "Gonzalo", "rating": 4, "comment": "Trae muchas piezas y proyectos variados. Ojo: las pilas no vienen.", "date": "2025-08-03" },
+  { "product_id": "SKU-1004", "productId": "SKU-1004", "user": "Lorena",  "rating": 5, "comment": "Ideal para introducir robótica básica. Manual en español bien explicado.", "date": "2025-08-10" },
+  { "product_id": "SKU-1004", "productId": "SKU-1004", "user": "Patricio","rating": 4, "comment": "Buen regalo educativo. Recomendado desde 8 años como indica.", "date": "2025-08-24" },
+  { "product_id": "SKU-1004", "productId": "SKU-1004", "user": "Daniela", "rating": 5, "comment": "Calidad superior para el precio. Horas de entretención.", "date": "2025-09-05" },
+
+  { "product_id": "SKU-1005", "productId": "SKU-1005", "user": "Ximena",  "rating": 5, "comment": "Alumbra muy bien y el USB carga el celular sin problemas.", "date": "2025-07-27" },
+  { "product_id": "SKU-1005", "productId": "SKU-1005", "user": "Rodrigo", "rating": 4, "comment": "Los niveles de brillo ayudan harto. El brazo se mantiene firme.", "date": "2025-08-06" },
+  { "product_id": "SKU-1005", "productId": "SKU-1005", "user": "Alejandra","rating": 5, "comment": "Compacta y moderna. Cambio de temperatura de color muy útil.", "date": "2025-08-14" },
+  { "product_id": "SKU-1005", "productId": "SKU-1005", "user": "Sebastián","rating": 4, "comment": "Buena relación precio/calidad. Cable un poco corto, nada grave.", "date": "2025-08-30" },
+  { "product_id": "SKU-1005", "productId": "SKU-1005", "user": "Ignacia", "rating": 5, "comment": "Perfecta para escritorio. No calienta y rinde mucho.", "date": "2025-09-03" },
+
+  { "product_id": "SKU-1006", "productId": "SKU-1006", "user": "Matías",  "rating": 5, "comment": "Muy buen pique y control. Aguantó varios partidos en sintético.", "date": "2025-07-25" },
+  { "product_id": "SKU-1006", "productId": "SKU-1006", "user": "Francisca","rating": 4, "comment": "Costuras firmes. Trae la presión recomendada en la caja.", "date": "2025-08-04" },
+  { "product_id": "SKU-1006", "productId": "SKU-1006", "user": "Pedro",   "rating": 4, "comment": "Peso correcto para talla 5. El diseño se ve muy bien.", "date": "2025-08-12" },
+  { "product_id": "SKU-1006", "productId": "SKU-1006", "user": "Camilo",  "rating": 5, "comment": "Se nota la cámara de butilo, no pierde aire fácilmente.", "date": "2025-08-23" },
+  { "product_id": "SKU-1006", "productId": "SKU-1006", "user": "Antonia", "rating": 4, "comment": "Funciona bien en cancha de pasto y en multiuso. Recomendable.", "date": "2025-09-01" }
+]

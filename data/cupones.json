@@ -1,0 +1,5 @@
+[
+  {"code":"DESC5000","type":"fixed","value":5000},
+  {"code":"DESC5","type":"percent","value":5},
+  {"code":"ENVIOGRATIS","type":"ship"}
+]

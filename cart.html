@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini-Amazon | Carrito</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><!-- íconos -->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg bg-body border-bottom shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><Mini-Amazon></Mini-Amazon></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto my-2 my-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">Productos</a></li>
+      </ul>
+
+      <!-- Buscador global: redirige a catalogo.html?q=... -->
+      <form class="d-none d-lg-flex me-lg-3" action="catalogo.html" method="get" role="search">
+        <div class="input-group nav-search">
+          <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+          <input class="form-control border-start-0" type="search" name="q" id="navQ"
+                 placeholder="Buscar productos…">
+        </div>
+      </form>
+
+      <div class="d-flex align-items-center gap-2">
+        <a class="btn btn-sm btn-outline-secondary" href="favoritos.html" title="Favoritos">
+          <i class="bi bi-heart"></i>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="cart.html" title="Carrito">
+          <i class="bi bi-cart"></i>
+        </a>
+        <button id="toggleTheme" class="btn btn-sm btn-outline-secondary" title="Tema claro/oscuro">🌓</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main class="container py-4">
+  <h1 class="h4 mb-3">Carrito</h1>
+
+  <!-- estado vacío -->
+  <div id="empty" class="alert alert-info d-none">
+    Tu carrito está vacío. <a href="catalogo.html" class="alert-link">Ir al catálogo</a>.
+  </div>
+
+  <!-- contenido -->
+  <div id="cartWrap" class="row g-4 d-none">
+    <!-- Lista de productos -->
+    <section class="col-12 col-lg-8">
+      <div class="card cart-box">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th style="width:64px;"></th>
+                  <th>Producto</th>
+                  <th class="text-end">Precio</th>
+                  <th style="width:190px;">Cantidad</th>
+                  <th class="text-end">Subtotal</th>
+                  <th class="text-end" style="width:100px;"></th>
+                </tr>
+              </thead>
+              <tbody id="cartBody"></tbody>
+            </table>
+          </div>
+
+          <button id="clearCart" class="btn btn-link text-danger mt-3">Vaciar carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumen a la derecha -->
+    <aside class="col-12 col-lg-4">
+      <div class="cart-summary">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h6 mb-3">Resumen del pedido</h2>
+
+            <div class="d-flex justify-content-between">
+              <span>Subtotal</span><strong id="subTotal">$0</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>IVA (19%)</span><strong id="iva">$0</strong>
+            </div>
+            <!-- Si luego calculas envío, puedes agregar:
+            <div class="d-flex justify-content-between">
+              <span>Envío</span><strong id="shipCost">$0</strong>
+            </div>
+            <div id="shipMsg" class="small text-success mt-1" style="display:none">
+              ¡Envío gratis por compras sobre $50.000!
+            </div> -->
+            <hr>
+            <div class="d-flex justify-content-between fs-5">
+              <span>Total</span><strong id="total">$0</strong>
+            </div>
+
+            <a href="checkout.html" class="btn btn-dark w-100 mt-3">Proceder al checkout</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+  <!-- Modal eliminar -->
+  <div class="modal fade" id="removeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Quitar producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          ¿Seguro que quieres quitar <strong id="rmName">este producto</strong> del carrito?
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button id="confirmRemove" class="btn btn-danger">Quitar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toasts (mismo que usas en otras páginas) -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1080">
+    <div id="appToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Mini-Amazon</strong>
+        <small class="text-muted">Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body">Mensaje</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // tema claro/oscuro
+  (function () {
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') root.classList.add('dark');
+    document.getElementById('toggleTheme')?.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+  })();
+
+  // marcar link activo según la página
+  (function () {
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.navbar .nav-link').forEach(a => {
+      const href = a.getAttribute('href');
+      const isHome = (href === 'index.html' && (path === '' || path === 'index.html'));
+      if (href === path || isHome) a.classList.add('active');
+    });
+  })();
+  </script>
+  <script type="module" src="js/cart.js"></script>
+</body>
+</html>

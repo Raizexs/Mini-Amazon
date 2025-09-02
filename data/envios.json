@@ -1,0 +1,5 @@
+[
+  { "id": "std", "name": "Envío estándar (48–72h)", "cost": 2990 },
+  { "id": "exp", "name": "Envío express (24–48h)",  "cost": 7990 },
+  { "id": "pick","name": "Retiro en tienda",        "cost": 0    }
+]

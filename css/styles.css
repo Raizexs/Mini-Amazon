@@ -1,0 +1,558 @@
+/* ====== Tema base (Solo CSS variables) ====== */
+:root{
+  --font-size:14px;
+  --background:#fff;
+  --foreground: oklch(0.145 0 0);
+  --card:#fff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover:#fff;
+  --popover-foreground: oklch(0.145 0 0);
+  --primary:#030213;
+  --primary-foreground:#ffffff;
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground:#030213;
+  --muted:#ececf0;
+  --muted-foreground:#717182;
+  --accent:#e9ebef;
+  --accent-foreground:#030213;
+  --destructive:#d4183d;
+  --destructive-foreground:#ffffff;
+  --border: rgba(0,0,0,.1);
+  --input: transparent;
+  --input-background:#f3f3f5;
+  --switch-background:#cbced4;
+  --ring: oklch(0.708 0 0);
+  --radius:.625rem;
+
+  /* Mapeo Bootstrap (lo esencial) */
+  --bs-body-bg: var(--background);
+  --bs-body-color: var(--foreground);
+  --bs-border-color: var(--border);
+  --bs-link-color: var(--primary);
+  --bs-link-hover-color: var(--primary);
+  --bs-border-radius: var(--radius);
+  --bs-card-bg: var(--card);
+  --bs-card-color: var(--card-foreground);
+}
+
+.dark{
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: #fff;
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+}
+
+html{ font-size:var(--font-size); }
+body{
+  background:var(--background);
+  color:var(--foreground);
+}
+
+/* ====== Afinación Bootstrap para el look de las capturas ====== */
+.card{
+  border-radius:1rem;
+  border-color:var(--border);
+  background:var(--card);
+  color:var(--card-foreground);
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:box-shadow .2s, transform .2s;
+}
+.card:hover{ box-shadow:0 10px 24px rgba(0,0,0,.08); transform:translateY(-2px); }
+
+.btn-primary{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:var(--primary-foreground);
+}
+.btn-primary:hover{ filter:brightness(.95); }
+.btn-outline-secondary{ border-color:var(--border); color:var(--foreground); }
+.btn-outline-secondary:hover{ background:var(--accent); color:var(--accent-foreground); }
+
+.form-control{
+  background:var(--input-background);
+  border-color:var(--border);
+}
+.form-select{
+  background-color:var(--input-background);
+  border-color:var(--border);
+}
+.form-control:focus, .form-select:focus, .btn:focus{
+  box-shadow:0 0 0 .25rem color-mix(in oklab, var(--ring) 25%, transparent);
+  border-color:var(--ring);
+}
+
+/* Barra de filtros fija (sticky) */
+.filter-card{ position:sticky; top:1rem; }
+
+/* Tarjeta de producto */
+.price-old{ text-decoration:line-through; opacity:.6; margin-left:.5rem; }
+.btn-heart{ position:absolute; top:.5rem; right:.5rem; z-index:2; }
+.badge-discount{ position:absolute; top:.5rem; left:.5rem; }
+
+/* Thumbs del Quick View */
+.qv-thumb{
+  width:56px; height:56px; object-fit:cover; cursor:pointer;
+  border-radius:.5rem; border:1px solid var(--border);
+}
+
+/* Toast */
+.toast{ background:var(--card); color:var(--card-foreground); }
+
+/* Encabezados base (tipografía suave) */
+h1,h2,h3,h4{ font-weight:500; line-height:1.5; }
+h1{ font-size:clamp(1.25rem,2vw,1.5rem); }
+h2{ font-size:clamp(1.125rem,1.8vw,1.25rem); }
+h3{ font-size:1rem; }
+
+/* Navbar look */
+.navbar { --bs-navbar-padding-y: .6rem; background: var(--background); }
+.navbar .nav-link { color: var(--foreground); opacity: .8; }
+.navbar .nav-link.active, .navbar .nav-link:hover { opacity: 1; font-weight: 600; }
+.navbar .btn { border-radius: 999px; }
+
+/* Buscador píldora */
+.nav-search .input-group-text { border-radius: 999px 0 0 999px; border-right: 0; }
+.nav-search .form-control {
+  border-radius: 0 999px 999px 0; background: var(--input-background); border-left: 0;
+}
+
+/* Tipografías */
+:root{
+  --font-display: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --font-body: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+body{ font-family: var(--font-body); }
+.display-mono{ font-family: var(--font-display); }
+
+/* Hero (igual al diseño) */
+.hero-wrap{
+  background:
+    linear-gradient(135deg, color-mix(in oklab, var(--accent) 32%, transparent) 0%, transparent 60%),
+    radial-gradient(1200px 600px at -20% -10%, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%);
+  border-radius: 1.25rem;
+}
+.hero-title{
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.hero-lead{ max-width: 58ch; opacity: .85; }
+
+.hero-fig{ position: relative; }
+.hero-plate{
+  position: absolute; inset: 0; transform: translate(18px,18px);
+  background: color-mix(in oklab, var(--muted) 70%, transparent);
+  border-radius: 1.25rem; filter: blur(.3px);
+}
+.hero-card{
+  position: relative; z-index: 1;
+  background: var(--card); border-radius: 1.25rem; padding: 1.1rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+}
+.hero-badge{
+  position: absolute; right: .75rem; bottom: .75rem;
+  background: var(--primary); color: var(--primary-foreground);
+  border-radius: 999px; padding: .35rem .8rem; font-size: .8rem;
+}
+
+/* Feature cards */
+.feature-card{ border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+.feature-ico{
+  width: 54px; height:54px; display:grid; place-items:center;
+  border-radius:999px; background: var(--input-background); color: var(--foreground);
+}
+
+/* Sección destacados (usa tus cards Bootstrap) */
+.section-title{ font-weight:600; }
+.section-sub{ opacity:.75; max-width:68ch; margin-inline:auto; }
+
+/* === Rail de acciones en la card (derecha) === */
+.product-card { position: relative; }
+.product-card .action-rail{
+  position:absolute; right:.5rem; top:.5rem;
+  display:flex; flex-direction:column; gap:.5rem;
+  opacity:0; transform: translateX(8px);
+  transition: opacity .18s, transform .18s;
+  z-index: 3;
+}
+.product-card:hover .action-rail{ opacity:1; transform:none; }
+.product-card .action-rail .btn{ padding:.35rem .5rem; border-radius:.75rem; }
+
+/* En mobile el rail baja y siempre se ve */
+@media (max-width:576px){
+  .product-card .action-rail{
+    position: static; flex-direction: row; opacity:1; transform:none; margin:.5rem 0 0;
+  }
+}
+
+/* Pulido dark mode */
+.dark .btn-light{ background: var(--secondary); color: var(--secondary-foreground); border-color: var(--border); }
+.dark .btn-outline-secondary:hover{ background: var(--accent); color: var(--accent-foreground); }
+.dark .card{ box-shadow: 0 2px 14px rgba(0,0,0,.5); }
+
+.navbar.bg-body{ background: var(--background) !important; }
+
+/* ========================
+   Fix de legibilidad DARK
+   ======================== */
+
+/* Mapea colores Bootstrap a tus tokens */
+:root{
+  --bs-body-bg: var(--background);
+  --bs-body-color: var(--foreground);
+  --bs-heading-color: var(--foreground);
+  --bs-border-color: var(--border);
+  --bs-secondary-color: var(--muted-foreground);     /* text-muted */
+  --bs-tertiary-color: color-mix(in oklab, var(--foreground) 60%, transparent);
+}
+
+/* En oscuro, subimos contraste de los “muted” y bordes */
+.dark{
+  --bs-body-bg: var(--background);
+  --bs-body-color: var(--foreground);
+  --bs-heading-color: var(--foreground);
+  --bs-border-color: color-mix(in oklab, #fff 12%, transparent);
+  --bs-secondary-color: color-mix(in oklab, var(--foreground) 75%, transparent);
+  --bs-tertiary-color: color-mix(in oklab, var(--foreground) 55%, transparent);
+}
+
+/* Navbar realmente oscuro/legible */
+.navbar.bg-body{ background: var(--background) !important; }
+.dark .navbar .nav-link{ color: var(--foreground) !important; opacity:.9; }
+.dark .navbar .nav-link:hover{ opacity:1; }
+
+/* Cards: texto y “muted” visibles */
+.dark .card{ background: var(--card); color: var(--card-foreground); box-shadow:0 2px 14px rgba(0,0,0,.5); }
+.dark .card .small,
+.dark .card .text-muted{ color: var(--bs-secondary-color) !important; }
+.dark .price-old{ color: var(--bs-secondary-color); }
+
+/* Botones outline y light sobre fondo oscuro */
+.dark .btn-outline-secondary{ color: var(--foreground); border-color: var(--bs-border-color); }
+.dark .btn-outline-secondary:hover{ background: var(--accent); color: var(--accent-foreground); }
+.dark .btn-light{ background: var(--secondary); color: var(--secondary-foreground); border-color: var(--bs-border-color); }
+
+/* Rail lateral: que no se “pierda” en oscuro */
+.product-card .action-rail .btn{ border-color: var(--bs-border-color); }
+
+/* Badges sutiles (descuento) en oscuro */
+.dark .badge-discount{ 
+  background: color-mix(in oklab, #dc3545 18%, transparent); 
+  color: color-mix(in oklab, #ffd6db 85%, #fff 15%); 
+  border: 1px solid color-mix(in oklab, #dc3545 30%, transparent);
+}
+
+/* Inputs/Selects y placeholder */
+.dark .form-control,
+.dark .form-select{
+  background: color-mix(in oklab, var(--background) 85%, #000 0%);
+  color: var(--foreground);
+  border-color: var(--bs-border-color);
+}
+.dark .form-control::placeholder{ color: var(--bs-secondary-color); }
+
+/* Toasts */
+.dark .toast{ background: var(--card); color: var(--card-foreground); }
+
+/* Iconos del header (favorito/carrito) legibles */
+.dark .btn-outline-secondary i{ color: var(--foreground); }
+
+/* Navbar brand legible en claro/oscuro */
+.navbar .navbar-brand{ color: var(--foreground) !important; }
+.navbar .navbar-brand:hover{ opacity:.9; }
+
+/* Carrito */
+.cart-box{ border-radius: 1rem; }
+.cart-summary{ position: sticky; top: 1rem; }
+.cart-summary .card{ border-radius: 1rem; }
+.cart-row img{ width:54px;height:54px;object-fit:cover;border-radius:.5rem; }
+
+.pay-grid{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.pay-btn{
+  border:1px solid var(--bs-border-color); border-radius:.5rem; padding:.6rem 1rem;
+  font-weight:600; background:#fff;
+}
+.dark .pay-btn{ background: var(--card); color: var(--card-foreground); }
+.pay-paypal{ background:#ffb300; border-color:#f3ba00; }
+.pay-bancoestado{ background:#ff5f00; color:#fff; border-color:#ff5f00;}
+.pay-amazon{ background:#a7a7a7; border-color:#838383; }
+.pay-gpay  { background:#000; color:#fff; border-color:#ffffff; }
+
+/* Carrito (tabla) legible en oscuro */
+.dark .card{ background: var(--card); color: var(--card-foreground); }
+.dark .table{ color: var(--foreground); }
+.dark .table th, .dark .table td{ border-color: var(--bs-border-color); }
+.dark .text-muted{ color: var(--bs-secondary-color) !important; }
+
+/* Navbar: marca e íconos visibles en oscuro */
+.navbar .navbar-brand{ color: var(--foreground) !important; }
+.dark .navbar .bi,
+.dark .navbar .btn-outline-secondary i{ color: var(--foreground) !important; }
+.dark .navbar .btn-outline-secondary{ border-color: var(--bs-border-color) !important; }
+
+/* Botón BancoEstado (si aún no lo agregaste) */
+.pay-bancoestado{
+  background:#ff5f00; color:#fff; border-color:#ff5f00;
+}
+
+/* === DARK: Cart legible === */
+.dark #cartWrap .table,
+.dark #cartWrap .table *{
+  color: var(--foreground) !important;
+}
+
+.dark #cartWrap .text-muted,
+.dark .cart-summary .text-muted,
+.dark #cartWrap .small,
+.dark .cart-summary .small{
+  color: color-mix(in srgb, var(--foreground) 75%, transparent) !important;
+}
+
+.dark .card,
+.dark .cart-summary .card{
+  background: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border-color: color-mix(in srgb, #fff 14%, transparent) !important;
+  box-shadow: 0 2px 14px rgba(0,0,0,.45);
+}
+
+.dark #cartWrap .table th,
+.dark #cartWrap .table td{
+  border-color: color-mix(in srgb, #fff 14%, transparent) !important;
+}
+
+.dark hr{ border-color: color-mix(in srgb, #fff 16%, transparent) !important; }
+
+.dark .btn-dark{
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border-color: var(--primary) !important;
+}
+
+/* === DARK: variables Bootstrap para textos secundarios === */
+.dark{
+  --bs-body-color: var(--foreground);
+  --bs-secondary-color: color-mix(in srgb, var(--foreground) 75%, transparent);
+  --bs-border-color: color-mix(in srgb, #fff 14%, transparent);
+}
+.dark .text-body-secondary,
+.dark .text-muted{ color: var(--bs-secondary-color) !important; }
+
+/* === DARK: Navbar (marca + íconos visibles) === */
+.navbar .navbar-brand{ color: var(--foreground) !important; }
+.dark .navbar .bi,
+.dark .navbar .btn-outline-secondary i{ color: var(--foreground) !important; }
+.dark .navbar .btn-outline-secondary{ border-color: var(--bs-border-color) !important; }
+
+/* Títulos con Geist Mono */
+.display-mono, .section-title, .hero-title {
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Cards de beneficios: círculo con icono */
+.feature-icon{
+  width:72px; height:72px; border-radius:50%;
+  display:grid; place-items:center;
+  background: var(--accent); color: var(--primary);
+  border: 1px solid var(--bs-border-color);
+}
+.feature-icon .bi{ font-size:28px; color: currentColor; }
+
+/* En modo oscuro, círculo claro + icono oscuro para contraste */
+.dark .feature-card{ background: var(--card); color: var(--card-foreground); }
+.dark .feature-icon{ background:#fff !important; color:#030213 !important; }
+.dark .feature-card .text-body-secondary{ color: var(--bs-secondary-color) !important; }
+
+/* Navbar íconos y marca visibles en oscuro */
+.navbar .navbar-brand{ color: var(--foreground) !important; }
+.dark .navbar .bi,
+.dark .navbar .btn-outline-secondary i{ color: var(--foreground) !important; }
+.dark .navbar .btn-outline-secondary{ border-color: var(--bs-border-color) !important; }
+
+/* ===== Filtros (Accordion) — look suave y sin fondo azul ===== */
+.filters-acc .accordion-item{
+  border: 1px solid var(--bs-border-color);
+  border-radius: .75rem;
+  background: var(--card);
+  overflow: hidden;
+  margin-bottom: .75rem;
+}
+.filters-acc .accordion-button{
+  background: transparent;
+  color: var(--foreground);
+  border-radius: .75rem;
+  padding: .75rem 1rem;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.filters-acc .accordion-button:hover{
+  background: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.filters-acc .accordion-button:not(.collapsed){
+  background: transparent !important;
+  color: var(--foreground);
+  box-shadow: none;
+}
+.filters-acc .accordion-button:focus{ outline: 0; box-shadow: none; }
+.filters-acc .accordion-button::after{ transition: transform .2s ease; }
+.dark .filters-acc .accordion-button::after{ filter: invert(1) opacity(.75); }
+.filters-acc .accordion-body{ padding: .5rem .75rem .75rem; }
+.filters-acc .form-check-input:checked{ background-color: var(--primary); border-color: var(--primary); }
+.dark .filters-acc .form-check-input{ background-color: transparent; border-color: var(--bs-border-color); }
+
+/* Acciones flotantes en la tarjeta (favorito / quick view / agregar) */
+.product-card .card-actions{
+  position:absolute; top:.5rem; right:.5rem;
+  display:flex; flex-direction:column; gap:.5rem;
+  z-index: 3;
+}
+
+.product-card .card-action{
+  width:36px; height:36px; display:grid; place-items:center;
+  border-radius:50%;
+  background: rgba(255,255,255,.92);
+  color:#111;
+  border: 1px solid var(--bs-border-color);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+.product-card .card-action .bi{ font-size:1rem; }
+
+.product-card .card-action:hover{
+  transform: translateY(-1px) scale(1.05);
+  background: color-mix(in srgb, var(--accent) 70%, #fff);
+}
+
+/* Modo oscuro: que sigan siendo visibles */
+.dark .product-card .card-action{
+  background: #fff; color:#030213;
+  border-color: color-mix(in srgb, #000 12%, transparent);
+}
+
+/* Si marcas favorito con heart-fill, que se note el chip */
+.product-card .card-action.fav-active{
+  background: #ffe5ea; color:#d4183d;
+  border-color:#f4b7c2;
+}
+
+/* === Chips flotantes más pequeños y sutiles === */
+.product-card .card-actions{
+  top:.4rem; right:.4rem;
+  gap:.4rem;
+  transition: opacity .15s ease;
+}
+
+/* tamaño ↓ y fondo más translúcido para que se vea la imagen */
+.product-card .card-action{
+  width:26px; height:27px;
+  border-radius:999px;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.72); /* <— menos opaco */
+  color:#111;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,.18);
+  backdrop-filter: saturate(1.2) blur(2px);
+  opacity:.88;
+  transition: transform .15s ease, background .2s ease, color .2s ease, opacity .15s ease;
+}
+
+.product-card .card-action .bi{
+  font-size:.85rem; line-height:1;
+}
+
+/* hover/focus: un poco más visibles */
+.product-card .card-action:hover,
+.product-card .card-action:focus-visible{
+  opacity:1;
+  transform: translateY(-1px) scale(1.03);
+}
+
+/* dark mode: siguen claros pero discretos */
+.dark .product-card .card-action{
+  background: rgba(255,255,255,.78);
+  color:#030213;
+  border-color: rgba(0,0,0,.14);
+}
+
+/* favorito activo (ligero tinte rosado) */
+.product-card .card-action.fav-active{
+  background: color-mix(in srgb, #d4183d 12%, rgba(255,255,255,.75));
+  color:#d4183d;
+  border-color: color-mix(in srgb, #d4183d 25%, rgba(0,0,0,.12));
+}
+
+/* OPCIONAL: bajar aún más la presencia hasta hover */
+/*
+.product-card .card-actions{ opacity:.75; }
+.product-card:hover .card-actions{ opacity:1; }
+*/
+
+/* Pago: mismas tarjetas visuales que envío */
+#payGroup .form-check{
+  background: var(--card);
+  border-color: var(--bs-border-color);
+}
+#payGroup .form-check-input{
+  margin-top:.2rem;
+}
+#payGroup .border.rounded.p-3{
+  background: var(--card);
+  border-color: var(--bs-border-color);
+}
+
+/* ===== Especificaciones del producto (legible en modo oscuro y claro) ===== */
+#productView #specsTable {
+  --bs-table-bg: transparent;
+  --bs-table-border-color: rgba(0, 0, 0, .08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+#productView #specsTable th {
+  width: 38%;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+#productView #specsTable td {
+  color: var(--foreground);
+  background: transparent;
+}
+
+/* Bordes y colores en modo oscuro */
+.dark #productView #specsTable {
+  --bs-table-border-color: rgba(255, 255, 255, .12);
+}
+
+.dark #productView #specsTable th {
+  color: oklch(0.708 0 0);          /* usa tu var de "muted-foreground" en oscuro */
+}
+
+.dark #productView #specsTable td {
+  color: var(--foreground);
+}
+
+/* Rayado sutil opcional para filas (mejora legibilidad) */
+#productView #specsTable tbody tr:nth-child(odd) td,
+#productView #specsTable tbody tr:nth-child(odd) th {
+  background: rgba(0,0,0,.02);
+}
+.dark #productView #specsTable tbody tr:nth-child(odd) td,
+.dark #productView #specsTable tbody tr:nth-child(odd) th {
+  background: rgba(255,255,255,.03);
+}

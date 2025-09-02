@@ -1,0 +1,18 @@
+[
+  {
+    "region": "Región Metropolitana de Santiago",
+    "cities": ["Santiago", "Providencia", "Las Condes", "Maipú", "Puente Alto"]
+  },
+  {
+    "region": "Valparaíso",
+    "cities": ["Valparaíso", "Viña del Mar", "Quilpué", "Villa Alemana"]
+  },
+  {
+    "region": "Biobío",
+    "cities": ["Concepción", "Talcahuano", "Los Ángeles", "Chillán"]
+  },
+  {
+    "region": "La Araucanía",
+    "cities": ["Temuco", "Padre Las Casas", "Villarrica", "Angol"]
+  }
+]
