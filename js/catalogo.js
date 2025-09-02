@@ -1,5 +1,3 @@
-// js/catalogo.js (drop-in)
-
 import { getJSON } from "./api.js";
 import { toast }   from "./app.js";
 
@@ -301,7 +299,6 @@ function wireFilters(cats) {
     if (Number(p.stock)<=0) { toast("Sin stock.", "danger"); return; }
     if (addOneToCart(p, 1)) {
       toast("Agregado. Vamos a checkout…","success");
-      // el profe pidió “compra de una”
       window.location.href = "checkout.html";
     }
     e.preventDefault(); return;

@@ -31,6 +31,7 @@ const writeOrders= (arr) => localStorage.setItem(ORDERS_KEY, JSON.stringify(arr)
 /* ===========================
    Ubicaciones (región/comuna)
    =========================== */
+
 async function loadLocations() {
   const data = await getJSON("data/localidades.json");
   return Array.isArray(data) ? data : [];
@@ -53,6 +54,7 @@ function fillCities(locations, regionName) {
 /* ===========================
    Teléfono: solo + y dígitos
    =========================== */
+
 function enforcePhoneInput(el, min = 8, max = 11) {
   if (!el) return;
   el.addEventListener("input", () => {
@@ -72,6 +74,7 @@ function enforcePhoneInput(el, min = 8, max = 11) {
 /* ===========================
    Estado global del checkout
    =========================== */
+
 const state = {
   products: [],
   cart: readCart(),
@@ -86,6 +89,7 @@ const state = {
 /* ===========================
    Cupones
    =========================== */
+
 async function loadCoupons(){
   try{
     const raw = await getJSON("data/cupones.json");
@@ -128,7 +132,7 @@ function aplicarCupon(code, allCoupons){
 }
 
 function wireCoupon(coupons){
-  // Soporta "couponCode"/"btnCoupon" (tu HTML actual) y "coupon"/"applyCoupon" (legacy)
+  // Soporta "couponCode"/"btnCoupon" y "coupon"/"applyCoupon" (legacy)
   const input = document.getElementById("couponCode") || document.getElementById("coupon");
   const btn   = document.getElementById("btnCoupon")  || document.getElementById("applyCoupon");
 
@@ -257,6 +261,7 @@ function renderSummary() {
 /* ===========================
    Validación (incluye CAPTCHA y pago)
    =========================== */
+
 function setInvalid(input, cond) {
   if (!input) return;
   input.classList.toggle("is-invalid", !!cond);
@@ -303,6 +308,7 @@ function validateForm(showToast=false) {
   }
 
   // CAPTCHA
+
   const capInput = document.getElementById("captchaA");
   const capMsg   = document.getElementById("captchaMsg");
   const capOk    = capInput ? Number(capInput.value) === state.captchaAns : true;
@@ -325,6 +331,7 @@ function validateForm(showToast=false) {
 /* ===========================
    Orden
    =========================== */
+
 function placeOrder() {
   const items = state.cart.items.map(it => {
     const p = state.products.find(x => String(x.id) === String(it.productId));
@@ -377,6 +384,7 @@ function placeOrder() {
 /* ===========================
    CAPTCHA
    =========================== */
+
 function genCaptcha(){
   const a = Math.floor(2 + Math.random()*8);
   const b = Math.floor(2 + Math.random()*8);
@@ -392,6 +400,7 @@ function genCaptcha(){
 /* ===========================
    Pago (radios y express)
    =========================== */
+
 function wirePaymentRadios(){
   const radios  = document.querySelectorAll('input[name="paymethod"]');
   const cardBox = document.getElementById('cardBox'); // tarjeta
@@ -429,6 +438,7 @@ function wireExpressPay(){
 /* ===========================
    Init
    =========================== */
+   
 document.addEventListener("DOMContentLoaded", async () => {
   // ---------- helper: (re)habilitar botón Confirmar ----------
   const enable = () => {

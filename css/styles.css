@@ -540,7 +540,7 @@ body{ font-family: var(--font-body); }
 }
 
 .dark #productView #specsTable th {
-  color: oklch(0.708 0 0);          /* usa tu var de "muted-foreground" en oscuro */
+  color: oklch(0.708 0 0);          /* usa var de "muted-foreground" en oscuro */
 }
 
 .dark #productView #specsTable td {

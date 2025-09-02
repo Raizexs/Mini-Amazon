@@ -18,8 +18,6 @@ function normalizeProduct(p) {
 
 // --- Utils ---
 
-
-
 const NS = "mini.";
 const CART_KEY = NS + "cart";
 const IVA_RATE = 0.19;
@@ -32,7 +30,6 @@ function readCart() {
 function writeCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify({ ...cart, updatedAt: new Date().toISOString() }));
 }
-
 
 // Fallback imágenes rotas
 function enableImageFallback(rootSelector) {
