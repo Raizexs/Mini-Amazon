@@ -8,8 +8,6 @@ desktop.ini
 
 # VS Code / JetBrains
 .vscode/*
-!.vscode/extensions.json   # <- deja recomendaciones de extensiones si quieres
-!.vscode/settings.json     # <- o tus settings del workspace
 .idea/
 *.code-workspace
 
