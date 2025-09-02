@@ -1,6 +1,7 @@
 ##############################
 # SISTEMA / EDITORES
 ##############################
+
 # macOS / Windows
 .DS_Store
 Thumbs.db
@@ -32,7 +33,7 @@ temp/
 .sass-cache/
 
 ##############################
-# NODE / GESTORES DE PAQUETES (por si luego agregas tooling)
+# NODE / GESTORES DE PAQUETES 
 ##############################
 node_modules/
 npm-debug.log*
