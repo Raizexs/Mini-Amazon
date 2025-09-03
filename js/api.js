@@ -6,4 +6,4 @@ export async function getJSON(path) {
   } catch (err) {
     throw new Error(`Error al cargar ${path}: ${err.message}`);
   }
-}
+} 
