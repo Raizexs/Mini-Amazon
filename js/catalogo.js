@@ -31,7 +31,7 @@ const state = {
     brand: "",
     pricePreset: "all",
     rating: null,
-    favOnly: false,   // si luego activas “Solo favoritos” desde UI
+    favOnly: false,   // si luego se activa “Solo favoritos” desde UI
     sort: "relevance",
     inStock: false
   }
@@ -255,15 +255,15 @@ function wireFilters(cats) {
     });
   }
 
-  // búsqueda con datalist (si existe)
+  // búsqueda con datalist
   on("q", "input", (()=>{ let t; return (e)=>{ clearTimeout(t); t=setTimeout(()=>{ state.filter.q=e.target.value; updateSuggestions(); renderGrid(); },250);} })());
 
-  // rating, stock, sort (si existen)
+  // rating, stock, sort
   on("rating", "change", (e)=>{ state.filter.rating = e.target.value || null; renderGrid(); });
   on("stockOnly","change", (e)=>{ state.filter.inStock = e.target.checked; renderGrid(); });
   on("sort",   "change", (e)=>{ state.filter.sort = e.target.value; renderGrid(); });
 
-  // limpiar (si existe)
+  // limpiar
   on("clear","click", ()=>{
     state.filter = { q:"", cat:"", brand:"", pricePreset:"all", rating:null, favOnly:false, sort:"relevance", inStock:false };
     if ($id("q"))      $id("q").value = "";
@@ -279,7 +279,7 @@ function wireFilters(cats) {
     renderGrid();
   });
 
-  // Delegación en grid: favs y quick view (si existe grid)
+  // Delegación en grid: favs y quick view (donde existe grid)
   const grid = $id("grid");
   if (grid) {
     document.getElementById("grid").addEventListener("click", (e) => {

@@ -394,7 +394,7 @@ async function init() {
       qtyInput.addEventListener(evt, () => setQty(qtyInput.value));
     });
 
-// (Opcional) si no hay stock, bloquea
+// (Opcional) Si no hay stock, se bloquea
     if (Number(p.stock) <= 0) {
       qtyInput.value = "0";
       qtyInput.disabled = true;
@@ -419,7 +419,7 @@ async function init() {
 }
 
 async function cargarResenas() {
-    const id = getParam("id");                 // viene de producto.html?id=ALGO
+    const id = getParam("id");   // viene de producto.html
         if (!id) return;
     
     const [productos, reviews] = await Promise.all([
