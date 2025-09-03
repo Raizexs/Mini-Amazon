@@ -1,7 +1,7 @@
 import { getJSON } from "./api.js";
 import { toast }   from "./app.js";
 
-// --- Normalizador (mismo que en producto.js) ---
+// --- Normalizador ---
 function normalizeProduct(p) {
   return {
     id: p.id,
@@ -43,7 +43,7 @@ function enableImageFallback(rootSelector) {
 // --- Estado ---
 const state = {
   products: [],    // normalizados
-  cart: readCart(),// { items:[{productId, qty}] }
+  cart: readCart(),   // { items:[{productId, qty}] }
   pendingRemove: null
 };
 
