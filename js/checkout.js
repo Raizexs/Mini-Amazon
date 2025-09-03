@@ -111,7 +111,7 @@ function aplicarCupon(code, allCoupons){
   const show = (text, cls) => {
     if (!msg) return;
     msg.textContent = text;
-    msg.className = "form-text " + cls; // reemplaza clases (quita d-none si estaba)
+    msg.className = "form-text " + cls; // reemplaza clases (quita d-none)
   };
 
   const c = String(code||"").trim().toUpperCase();
@@ -121,14 +121,14 @@ function aplicarCupon(code, allCoupons){
     state.coupon = null;
     show("Cupón inválido.", "text-danger");
     toast("Cupón inválido", "danger");
-    renderSummary();               // <— vuelve a pintar totales SIN descuento
+    renderSummary();    // <— vuelve a pintar totales SIN descuento
     return;
   }
 
-  state.coupon = found;            // {code, type: 'fixed'|'percent'|'ship', value}
+  state.coupon = found;    // {code, type: 'fixed'|'percent'|'ship', value}
   show(`Cupón aplicado: ${found.code}`, "text-success");
   toast("Cupón aplicado", "success");
-  renderSummary();                 // <— repinta con descuento/envío gratis
+  renderSummary();    // <— repinta con descuento/envío gratis
 }
 
 function wireCoupon(coupons){
@@ -250,7 +250,7 @@ function renderSummary() {
   set("iva",      fmtCLP(iva));
   set("total",    fmtCLP(total));
 
-  // (si usas panel derecho alternativo)
+  // (Panel derecho alternativo)
   set("coSub",   fmtCLP(subtotal));
   set("coDisc",  discount ? "−" + fmtCLP(discount) : fmtCLP(0));
   set("coShip",  fmtCLP(ship));
@@ -404,7 +404,7 @@ function genCaptcha(){
 function wirePaymentRadios(){
   const radios  = document.querySelectorAll('input[name="paymethod"]');
   const cardBox = document.getElementById('cardBox'); // tarjeta
-  const bankBox = document.getElementById('instBox'); // transferencia (mantenido id)
+  const bankBox = document.getElementById('instBox'); // transferencia 
   const reqIds  = ['ccNumber','ccExp','ccCvc','cardNumber','cardExp','cardCvv']; // soporta ambos
 
   function toggle(){
@@ -448,8 +448,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ---------- Cupones ----------
   const coupons = await loadCoupons();
-  wireCoupon(coupons);               // <— usa la función de arriba
-// Si quieres que al teclear se re-evalúe el botón Confirmar:
+  wireCoupon(coupons);   // <— usa la función de arriba
   document.getElementById("couponCode")?.addEventListener("input", () => {
   const btn = document.getElementById("btnPlace");
   if (btn) btn.disabled = !validateForm(false);
@@ -498,7 +497,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll('input[name="paymethod"]').forEach(r =>
     r.addEventListener("change", enable)
   );
-  wireExpressPay?.();     // si tienes esta función en tu archivo
+  wireExpressPay?.();     // se cumple esta función en el archivo
   // Asegura enable() al elegir un express
   document.querySelectorAll('[data-pay]').forEach(btn =>
     btn.addEventListener("click", () => setTimeout(enable, 0))
