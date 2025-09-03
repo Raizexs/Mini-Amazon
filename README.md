@@ -16,45 +16,46 @@ Construir un mini-marketplace funcional (catálogo → detalle → carrito → c
 ## 📦 Estructura
 
 / (raíz del sitio en Apache: htdocs/mini-amazon)
-├─ index.html
-├─ catalogo.html
-├─ producto.html
-├─ cart.html
-├─ checkout.html
-├─ favoritos.html
-├─ orders.html
-├─ css/
-│ └─ styles.css
-├─ js/
-│ ├─ app.js
-│ ├─ api.js
-│ ├─ catalogo.js
-│ ├─ producto.js
-│ ├─ cart.js
-│ ├─ favoritos.js
-│ ├─ orders.js
-│ ├─ tienda.js
-│ └─ checkout.js
-├─ data/
-│ ├─ categorias.json
-│ ├─ cupones.json
-│ ├─ envios.json
-│ ├─ localidades.json
-│ ├─ productos.json
-│ └─ reviews.json
-└─ img/
-├─ placeholder.png
-│ ├─ bancoestado.svg.png
-│ ├─ apay.svg.png
-│ ├─ gpay.svg.png
-│ ├─ paypal.svg.png
-│ ├─ prod1001-1.png
-│ ├─ prod1001-2.png
-│ ├─ prod1002-1.png
-│ ├─ prod1003-1.png
-│ ├─ prod1004-1.png
-│ ├─ prod1005-1.png
-└─ prod1006-1.png
+mini-amazon/
+├── index.html
+├── catalogo.html
+├── producto.html
+├── cart.html
+├── checkout.html
+├── favoritos.html
+├── orders.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── app.js
+│   ├── api.js
+│   ├── catalogo.js
+│   ├── producto.js
+│   ├── cart.js
+│   ├── favoritos.js
+│   ├── orders.js
+│   ├── tienda.js
+│   └── checkout.js
+├── data/
+│   ├── categorias.json
+│   ├── cupones.json
+│   ├── envios.json
+│   ├── localidades.json
+│   ├── productos.json
+│   └── reviews.json
+└── img/
+    ├── placeholder.png
+    ├── bancoestado.svg
+    ├── apay.svg
+    ├── gpay.svg
+    ├── paypal.svg
+    ├── prod1001-1.png
+    ├── prod1001-2.png
+    ├── prod1002-1.png
+    ├── prod1003-1.png
+    ├── prod1004-1.png
+    ├── prod1005-1.png
+    └── prod1006-1.png
 
 ## 🚀 Setup (Apache / XAMPP)
 
