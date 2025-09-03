@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   ]);
   state.products = (productsRaw || []).map(normalizeProduct);
 
-  // ---------- Envíos ----------
+  // ---------- Envíos ---------- 
   state.shippingOptions = await loadShipping();
   fillShippingSelect();
   document.getElementById("shipping")?.addEventListener("change", () => {
